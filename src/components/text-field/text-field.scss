@@ -1,0 +1,73 @@
+.text-field,
+.subscription-text-field,
+.masked-text-field {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  &__title {
+    text-transform: uppercase;
+    font-weight: bold;
+    color: $color-main-100;
+    margin-bottom: 5px;
+  }
+  &__subtitle {
+    text-transform: uppercase;
+    color: $color-main-50;
+  }
+  &__button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 2.75rem;
+    height: 2.75rem;
+    font-family: $material-icons;
+    font-size: 1.5rem;
+    line-height: 2.625rem;
+    background: $color-secondary-gradient;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: $color-secondary;
+    border: none;
+    cursor: pointer;
+    &-background {
+      // белая подложка под стрелку
+      background-color: white;
+      position: absolute;
+      top: 1px;
+      right: 1px;
+      width: 2.6875rem;
+      height: 2.5rem;
+      border-radius: 4px;
+    }
+    &:hover ~ .subscription-text-field__input {
+      border-color: $color-main-50;
+    }
+  }
+  &__wrapper {
+    width: 100%;
+    position: relative;
+  }
+  &__input {
+    width: 100%;
+    padding: 0.8125rem 0.3125rem 0.6875rem 0.9375rem;
+    background: #ffffff;
+    border: 1px solid $color-main-25;
+    box-sizing: border-box;
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 0.875rem;
+    line-height: 1.125rem;
+    color: $color-main-75;
+    outline: none;
+    &::placeholder {
+      color: $color-main-25;
+    }
+    &:focus {
+      border-color: $color-main-50;
+    }
+    &:hover {
+      border-color: $color-main-50;
+    }
+  }
+}

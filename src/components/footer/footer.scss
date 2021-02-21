@@ -1,0 +1,119 @@
+@import '../toxin-logo/toxin-logo.scss';
+@import '../text-field/text-field.scss';
+
+.footer {
+  width: 100%;
+  font-size: 0.875rem;
+  background: #ffffff;
+  box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+  &__wrapper {
+    max-width: 1160px;
+    margin: 0 auto;
+    padding: 100px 0;
+    display: flex;
+    justify-content: space-between;
+    @media (max-width: 1440px) {
+      padding: 6.94vw 5.21vw;
+    }
+    @media (max-width: 670px) {
+      justify-content: center;
+    }
+  }
+  &__content {
+    box-shadow: 0px 1px 0px rgba(31, 32, 65, 0.1);
+  }
+  &__about-hotel {
+    display: flex;
+    flex-direction: column;
+    width: 260px;
+    @media (max-width: 1000px) {
+      display: none;
+    }
+  }
+  &__toxin-logo {
+    margin-bottom: 17px;
+  }
+  &__text {
+    color: $color-main-75;
+    line-height: 1.5rem;
+  }
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 160px;
+    @media (max-width: 670px) {
+      display: none;
+    }
+  }
+  &__subtitle {
+    margin-top: 4px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    color: $color-main-100;
+    text-transform: uppercase;
+    margin-bottom: 21px;
+  }
+  &__subitem {
+    color: $color-main-50;
+    text-decoration: none;
+    margin-bottom: 20px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  &__subscribe {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 260px;
+  }
+  &__subscribe-text {
+    line-height: 1.5rem;
+    color: $color-main-100;
+    margin-bottom: 20px;
+  }
+  &__subscribe-field {
+    width: 100%;
+  }
+}
+.copyright {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 23px 100px;
+  @media (max-width: 1440px) {
+    padding: 1.6vw 5.21vw;
+  }
+  @media (max-width: 444px) {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  &__text {
+    line-height: 1.5625rem;
+    color: $color-main-75;
+  }
+  &__icon {
+    margin-right: 20px;
+    &:last-child {
+      margin-right: 0;
+    }
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+  &__twitter {
+    margin-left: auto;
+    @media (max-width: 444px) {
+      margin-left: initial;
+    }
+    background: url(./img/twitter.svg) no-repeat center;
+  }
+  &__facebook {
+    background: url(./img/facebook.svg) no-repeat center;
+  }
+  &__instagram {
+    background: url(./img/instagram.svg) no-repeat center;
+  }
+}

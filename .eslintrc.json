@@ -1,0 +1,32 @@
+{
+  "parser": "babel-eslint",
+  "env": {
+    "browser": true,
+    "es2020": true
+  },
+  "extends": [
+    "airbnb-base"
+  ],
+  "parserOptions": {
+    "ecmaVersion": 11,
+    "sourceType": "module"
+  },
+  "rules": {
+    "no-unused-vars": "off",
+    "prefer-destructuring": [
+      "error",
+      {
+        "array": false
+      }
+    ],
+    "no-plusplus": ["error", { "allowForLoopAfterthoughts": true }],
+    "linebreak-style": "off",
+    "import/extensions": "off",
+    "import/no-unresolved": "off",
+    "class-methods-use-this": "off"
+  },
+  "globals": {
+    "React": "readonly",
+    "$": "readonly"
+  }
+}

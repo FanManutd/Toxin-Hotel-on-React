@@ -1,0 +1,149 @@
+.dropdown {
+  font-size: 0.75rem;
+  width: 100%;
+  position: relative;
+  &__title {
+    color: $color-main-100;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+  }
+  &__wrapper {
+    width: 100%;
+    position: relative;
+  }
+  &__arrow {
+    font-family: $material-icons;
+    font-size: 1.5rem;
+    line-height: 2.5rem;
+    text-align: center;
+    cursor: default;
+    width: 2.75rem;
+    color: $color-main-75;
+    position: absolute;
+    top: 1px;
+    right: 1px;
+    width: 2.6875rem;
+    border-radius: 4px;
+    background-color: white;
+    user-select: none;
+    &:hover + .dropdown__input {
+      border-color: $color-main-50;
+    }
+  }
+  &__input {
+    width: 100%;
+    padding: 0.8125rem 0.3125rem 0.6875rem 0.9375rem;
+    background: #ffffff;
+    border: 1px solid $color-main-25;
+    box-sizing: border-box;
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 0.875rem;
+    line-height: 1.125rem;
+    color: $color-main-75;
+    cursor: default;
+    outline: none;
+    transition: border-radius 0.2s;
+    &_expanded {
+      border-radius: 4px 4px 0px 0px;
+      border-color: $color-main-50;
+      box-shadow: 0px 10px 20px $color-main-05;
+    }
+    &:hover {
+      border-color: $color-main-50;
+    }
+  }
+  &__elements {
+    transform: scaleY(0);
+    border: 1px solid $color-main-50;
+    border-radius: 0px 0px 4px 4px;
+    border-top-width: 0;
+    padding-left: 14px;
+    padding-right: 7px;
+    position: absolute;
+    width: 100%;
+    background: #fff;
+    box-shadow: 0px 10px 20px $color-main-05;
+    box-sizing: border-box;
+    transform-origin: 0 0;
+    transition: transform 0.2s;
+    &_expanded {
+      transform: scaleY(1);
+    }
+    z-index: 1;
+  }
+  &__element {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-bottom: 7px;
+    &:first-child {
+      padding-top: 4px;
+    }
+  }
+  &__name {
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  &__button {
+    font-family: Arial, sans-serif;
+    font-size: 1.125rem;
+    color: $color-main-50;
+    border: 1px solid $color-main-25;
+    width: 1.875rem;
+    height: 1.875rem;
+    background: none;
+    border-radius: 50%;
+    text-transform: uppercase;
+    cursor: pointer;
+    outline: none;
+    transition: color 0.2s, border-color 0.2s, box-shadow 0.1s;
+    &:disabled {
+      color: $color-main-1;
+      border-color: $color-main-1;
+      cursor: auto;
+    }
+    &:hover:enabled {
+      color: white;
+      background-color: #616175;
+    }
+    &:active:enabled {
+      box-shadow: inset 0 0px 7px 3px #101013;
+    }
+  }
+  &__minus {
+    margin-left: auto; // прижимает кнопки минус, плюс и счётчик вправо.
+    margin-right: 2rem;
+  }
+  &__count {
+    position: absolute;
+    font-weight: bold;
+    right: 2.6875rem;
+  }
+  &__bottom-buttons {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__bottom-button {
+    background: none;
+    border: none;
+    font-family: inherit;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: inherit;
+    padding: 0;
+    margin-top: 14px;
+    margin-bottom: 13px;
+    cursor: pointer;
+  }
+  &__clear {
+    color: $color-main-50;
+    &_hidden {
+      visibility: hidden;
+    }
+  }
+  &__apply {
+    color: $color-secondary;
+  }
+}
