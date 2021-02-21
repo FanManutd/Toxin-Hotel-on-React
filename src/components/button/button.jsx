@@ -3,12 +3,12 @@
 В форме у кнопки фиксированный минимальный размер,
 а в хэдере кнопка более узкая и не имеет фикс. мин. размера.  */
 
-class Button extends React.Component {
-  render() {
-    return (
-      <button type='button' className={`button button_color_${this.props.color} button_place_${this.props.place}`}>{this.props.text}</button>
-    );
-  }
+function Button(props) {
+  const { color, place, text } = props;
+
+  return (
+    <button type='button' className={`button button_color_${color} button_place_${place}`}>{text}</button>
+  );
 }
 
 Button.defaultProps = {

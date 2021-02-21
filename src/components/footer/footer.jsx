@@ -1,53 +1,53 @@
+/* eslint-disable no-shadow */
 import ToxinLogo from '../toxin-logo/toxin-logo';
 import TextField from '../text-field/text-field';
 
-class Footer extends React.Component {
-  render() {
-    const {
-      footerText, menu, subscribeTitle, subscribeText, copyright,
-    } = this.props;
-    return (
-      <div className="footer">
-        <div className="footer__content">
-          <div className="footer__wrapper">
-            <div className="footer__about-hotel">
-              <div className="footer__toxin-logo">
-                <ToxinLogo />
-              </div>
-              <div className="footer__text">{footerText}</div>
+function Footer(props) {
+  const {
+    footerText, menu, subscribeTitle, subscribeText, copyright,
+  } = props;
+
+  return (
+    <div className="footer">
+      <div className="footer__content">
+        <div className="footer__wrapper">
+          <div className="footer__about-hotel">
+            <div className="footer__toxin-logo">
+              <ToxinLogo />
             </div>
-            {menu.map((item) => {
-              const { title, submenu } = item;
-              return (
-                <nav className="footer__item">
-                  <div className="footer__subtitle">{title}</div>
-                  {submenu.map((subitem) => {
-                    const { url, text } = subitem;
-                    return <a href={url} className="footer__subitem">{text}</a>;
-                  })}
-                </nav>
-              );
-            })}
-            <div className="footer__subscribe">
-              <div className="footer__subtitle">{subscribeTitle}</div>
-              <div className="footer__subscribe-text">{subscribeText}</div>
-              <div className="footer__subscribe-field">
-                <TextField type="subscription" placeholder="Your email address"/>
-              </div>
-            </div>
+            <div className="footer__text">{footerText}</div>
           </div>
-        </div>
-        <div className="footer__copyright">
-          <div className="copyright">
-            <div className="copyright__text">{copyright}</div>
-            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="copyright__twitter copyright__icon"></a>
-            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="copyright__facebook copyright__icon"></a>
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="copyright__instagram copyright__icon"></a>
+          {menu.map((item, index) => {
+            const { title, submenu } = item;
+            return (
+              <nav className="footer__item" key={index}>
+                <div className="footer__subtitle">{title}</div>
+                {submenu.map((subitem, index) => {
+                  const { url, text } = subitem;
+                  return <a href={url} className="footer__subitem" key={index}>{text}</a>;
+                })}
+              </nav>
+            );
+          })}
+          <div className="footer__subscribe">
+            <div className="footer__subtitle">{subscribeTitle}</div>
+            <div className="footer__subscribe-text">{subscribeText}</div>
+            <div className="footer__subscribe-field">
+              <TextField type="subscription" placeholder="Your email address" />
+            </div>
           </div>
         </div>
       </div>
-    );
-  }
+      <div className="footer__copyright">
+        <div className="copyright">
+          <div className="copyright__text">{copyright}</div>
+          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="copyright__twitter copyright__icon"></a>
+          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="copyright__facebook copyright__icon"></a>
+          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="copyright__instagram copyright__icon"></a>
+        </div>
+      </div>
+    </div>
+  );
 }
 
 Footer.defaultProps = {
