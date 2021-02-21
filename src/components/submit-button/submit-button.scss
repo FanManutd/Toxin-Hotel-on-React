@@ -1,0 +1,35 @@
+.submit-button {
+  position: relative;
+  &__button {
+    width: 100%;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    font-family: inherit;
+    line-height: 15px;
+    padding-top: 14px;
+    padding-bottom: 15px;
+    font-weight: bold;
+    background: $color-secondary-gradient;
+    color: white;
+    border-radius: 22px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: opacity 0.4s;
+    &:hover {
+      opacity: 0.6;
+    }
+  }
+  &__arrow {
+    position: absolute;
+    text-transform: lowercase;
+    text-align: center;
+    font-family: $material-icons;
+    font-size: 24px;
+    line-height: 44px;
+    color: #fff;
+    width: 44px;
+    top: 0;
+    right: 0;
+  }
+}

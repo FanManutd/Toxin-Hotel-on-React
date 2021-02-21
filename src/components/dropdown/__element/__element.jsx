@@ -13,12 +13,13 @@ class DropdownElement extends React.Component {
     const {
       name, value, min, max,
     } = this.props.element;
+
     return (
       <div className="dropdown__element">
         <div className="dropdown__name">{name}</div>
-        <button className="dropdown__minus dropdown__button" disabled={value <= min} onClick={this.handleMinusClick}>-</button>
+        <button type="button" className="dropdown__minus dropdown__button" disabled={value <= min} onClick={this.handleMinusClick}>-</button>
         <div className="dropdown__count">{value}</div>
-        <button className="dropdown__plus dropdown__button" disabled={value >= max} onClick={this.handlePlusClick}>+</button>
+        <button type="button" className="dropdown__plus dropdown__button" disabled={value >= max} onClick={this.handlePlusClick}>+</button>
       </div>
     );
   }

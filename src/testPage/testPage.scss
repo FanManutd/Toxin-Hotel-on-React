@@ -5,6 +5,19 @@
 @import '../components/dropdown/dropdown.scss';
 @import '../components/text-field/text-field.scss';
 @import '../components/footer/footer.scss';
+@import '../components/abouts-room/abouts-room.scss';
+@import '../components/block-color/block-color.scss';
+@import '../components/type/type.scss';
+@import '../components/submit-button/submit-button.scss';
+@import '../components/calendar/calendar.scss';
+@import '../components/date-dropdown/date-dropdown.scss';
+@import '../components/booking-room-card/booking-room-card.scss';
+@import '../components/bullet-list/bullet-list.scss';
+@import '../components/checkbox/checkbox.scss';
+@import '../components/radio-button/radio-button.scss';
+@import '../components/expandable-checkbox/expandable-checkbox.scss';
+@import '../components/filter-date/filter-date.scss';
+@import '../components/footer-creative/footer-creative.scss';
 
 html {
   font-size: 16px;
@@ -13,7 +26,7 @@ html {
 
 body {
   margin: 0px;
-  // width: 320px;
+  width: 380px;
 }
 
 .dropdown1 {

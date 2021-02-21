@@ -4,6 +4,18 @@ import Dropdown from '../components/dropdown/dropdown';
 import myVars from '../variables/variables';
 import TextField from '../components/text-field/text-field';
 import Footer from '../components/footer/footer';
+import AboutsRoom from '../components/abouts-room/abouts-room';
+import BlockColor from '../components/block-color/block-color';
+import Type from '../components/type/type';
+import SubmitButton from '../components/submit-button/submit-button';
+import DateDropdown from '../components/date-dropdown/date-dropdown';
+import BookingRoomCard from '../components/booking-room-card/booking-room-card';
+import BulletList from '../components/bullet-list/bullet-list';
+import Checkbox from '../components/checkbox/checkbox';
+import RadioButton from '../components/radio-button/radio-button';
+import ExpandableCheckbox from '../components/expandable-checkbox/expandable-checkbox';
+import FilterDate from '../components/filter-date/filter-date';
+import FooterCreative from '../components/footer-creative/footer-creative';
 
 class TestPage extends React.Component {
   render() {
@@ -11,7 +23,7 @@ class TestPage extends React.Component {
     // return <Header navbar={navbarInHeaderRu} butLogin="Войти" butRegister="Зарегистрироваться"/>;
     return (
       <>
-      <Footer footerText="Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis." menu={myVars.footerMenuEn} subscribeTitle="Subscribe to our newsletter" subscribeText="Receive our latest news and promotions in your inbox!" copyright="Copyright © 2018 Toxin UI Kit. All rights reserved."/>
+        <FooterCreative />
       </>
     );
   }

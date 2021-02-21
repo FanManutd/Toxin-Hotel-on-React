@@ -1,0 +1,52 @@
+.block-color {
+  display: flex;
+  font-size: 1.1875rem;
+  line-height: 1.8125rem;
+  &__color-box {
+    width: 4.375rem;
+    height: 4.375rem;
+    border-radius: 6px;
+
+    &_dark-shade-100 {
+      background-color: $color-main-100;
+    }
+
+    &_dark-shade-75 {
+      background-color: $color-main-75;
+    }
+
+    &_dark-shade-50 {
+      background-color: $color-main-50;
+    }
+
+    &_dark-shade-25 {
+      background-color: $color-main-25;
+    }
+
+    &_dark-shade-05 {
+      background-color: $color-main-05;
+    }
+
+    &_purple {
+      background-color: $color-secondary;
+    }
+
+    &_green {
+      background-color: $color-tertiary;
+    }
+  }
+  &__description {
+    padding: 8px 0 0 40px;
+  }
+  &__text {
+    margin: 0;
+  }
+  &__name {
+    font-family: $font-secondary;
+    font-weight: bold;
+  }
+  &__rgb {
+    font-family: $font-secondary;
+    font-weight: normal;
+  }
+}

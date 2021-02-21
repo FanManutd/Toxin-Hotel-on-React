@@ -23,7 +23,8 @@
     "linebreak-style": "off",
     "import/extensions": "off",
     "import/no-unresolved": "off",
-    "class-methods-use-this": "off"
+    "class-methods-use-this": "off",
+    "no-new": "off"
   },
   "globals": {
     "React": "readonly",

@@ -1,0 +1,47 @@
+@import '../toxin-logo/toxin-logo.scss';
+
+.footer-creative {
+  background: #ffffff;
+  box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+  &__wrapper {
+    max-width: 560px;
+    margin: 0 auto;
+    padding: 100px 10px 110px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @media (max-width: 1440px) {
+      padding: 6.94vw 10px 7.64vw;
+    }
+  }
+  &__logo {
+    margin-bottom: 18px;
+  }
+  &__text {
+    font-size: 0.875rem;
+    line-height: 1.5rem;
+    color: $color-main-75;
+    text-align: center;
+    margin-bottom: 27px;
+  }
+  &__icons {
+    display: flex;
+  }
+  &__icon {
+    margin-right: 20px;
+    &:last-child {
+      margin-right: 0;
+    }
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+  &__twitter {
+    background: url(./img/twitter.svg) no-repeat center;
+  }
+  &__facebook {
+    background: url(./img/facebook.svg) no-repeat center;
+  }
+  &__instagram {
+    background: url(./img/instagram.svg) no-repeat center;
+  }
+}

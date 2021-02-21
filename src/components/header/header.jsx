@@ -12,10 +12,6 @@ class Header extends React.Component {
     };
   }
 
-  handleSubmenuClick = (e) => {
-    e.currentTarget.classList.toggle('header__submenu_hidden');
-  }
-
   handleBurgerClick = () => {
     this.setState((state) => ({
       isBurgerShow: !state.isBurgerShow,
