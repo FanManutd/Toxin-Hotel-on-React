@@ -16,6 +16,18 @@ import RadioButton from '../components/radio-button/radio-button';
 import ExpandableCheckbox from '../components/expandable-checkbox/expandable-checkbox';
 import FilterDate from '../components/filter-date/filter-date';
 import FooterCreative from '../components/footer-creative/footer-creative';
+import LikeButton from '../components/like-button/like-button';
+import Logo from '../components/logo/logo';
+import Pagination from '../components/pagination/pagination';
+import RateButton from '../components/rate-button/rate-button';
+import RangeSlider from '../components/range-slider/range-slider';
+import RichCheckbox from '../components/rich-checkbox/rich-checkbox';
+import Toggle from '../components/toggle/toggle';
+import SearchRoomCard from '../components/search-room-card/search-room-card';
+import SignInCard from '../components/sign-in-card/sign-in-card';
+import SignUpCard from '../components/sign-up-card/sign-up-card';
+import RoomCard from '../components/room-card/room-card';
+import Comment from '../components/comment/comment';
 
 class TestPage extends React.Component {
   render() {
@@ -23,7 +35,7 @@ class TestPage extends React.Component {
     // return <Header navbar={navbarInHeaderRu} butLogin="Войти" butRegister="Зарегистрироваться"/>;
     return (
       <>
-        <FooterCreative />
+        <Comment />
       </>
     );
   }

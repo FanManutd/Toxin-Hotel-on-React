@@ -1,0 +1,32 @@
+.pagination {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  &__number {
+    width: 2.5rem;
+    font-size: 0.75rem;
+    line-height: 2.5rem;
+    color: $color-main-50;
+    text-align: center;
+    cursor: pointer;
+    &:first-child {
+      font-weight: bold;
+      color: white;
+      background: $color-secondary-gradient;
+      border-radius: 22px;
+    }
+    &:last-child {
+      font-family: $material-icons;
+      color: white;
+      background: $color-tertiary-gradient;
+      border-radius: 22px;
+      font-size: 1.5rem;
+    }
+  }
+  &__caption {
+    font-size: 0.875rem;
+    color: $color-main-75;
+    text-align: center;
+    margin-top: 10.5px;
+  }
+}

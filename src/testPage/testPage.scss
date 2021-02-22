@@ -18,6 +18,18 @@
 @import '../components/expandable-checkbox/expandable-checkbox.scss';
 @import '../components/filter-date/filter-date.scss';
 @import '../components/footer-creative/footer-creative.scss';
+@import '../components/like-button/like-button.scss';
+@import '../components/logo/logo.scss';
+@import '../components/pagination/pagination.scss';
+@import '../components/rate-button/rate-button.scss';
+@import '../components/range-slider/range-slider.scss';
+@import '../components/rich-checkbox/rich-checkbox.scss';
+@import '../components/toggle/toggle.scss';
+@import '../components/search-room-card/search-room-card.scss';
+@import '../components/sign-in-card/sign-in-card.scss';
+@import '../components/sign-up-card/sign-up-card.scss';
+@import '../components/room-card/room-card.scss';
+@import '../components/comment/comment.scss';
 
 html {
   font-size: 16px;
@@ -26,7 +38,7 @@ html {
 
 body {
   margin: 0px;
-  width: 380px;
+  width: 270px;
 }
 
 .dropdown1 {

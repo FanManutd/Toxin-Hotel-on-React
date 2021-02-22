@@ -9,15 +9,18 @@ const isDev = process.env.NODE_ENV === 'development';
 // const isProd = !isDev;
 
 module.exports = {
+  resolve: {
+    extensions: ['.js', '.jsx'],
+    alias: {
+      '@components': path.resolve(__dirname, 'src/components'),
+    },
+  },
   entry: {
     testPage: path.join(__dirname, 'src/testPage/index.jsx'),
   },
   output: {
     filename: '[name].[contenthash].js',
     path: path.resolve(__dirname, 'dist'),
-  },
-  resolve: {
-    extensions: ['.js', '.jsx'],
   },
   devtool: isDev ? 'source-map' : '',
   module: {
