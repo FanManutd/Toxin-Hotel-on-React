@@ -9,7 +9,7 @@ class ExpandableCheckbox extends React.Component {
     };
   }
 
-  onWrapperClick = () => {
+  handleWrapperClick = () => {
     this.setState((state) => ({
       isExpanded: !state.isExpanded,
     }));
@@ -23,7 +23,7 @@ class ExpandableCheckbox extends React.Component {
 
     return (
       <div className="expandable-checkbox">
-        <div className="expandable-checkbox__wrapper" onClick={this.onWrapperClick}>
+        <div className="expandable-checkbox__wrapper" onClick={this.handleWrapperClick}>
           <div className="expandable-checkbox__title">{title}</div>
           <div className={`expandable-checkbox__arrow ${isArrowExpanded}`}>expand_more</div>
         </div>
