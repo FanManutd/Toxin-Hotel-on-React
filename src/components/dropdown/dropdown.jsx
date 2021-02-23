@@ -97,7 +97,7 @@ class Dropdown extends React.Component {
       }
     }
 
-    this.setState({ result: resultString });
+    this.setState({ result: resultString.toLowerCase() });
   }
 
   declOfNum(number, titles) { // формирование окончаний
@@ -146,7 +146,7 @@ Dropdown.defaultProps = {
   {
     name: 'Кровати', nameForms: ['Кровать', 'Кровати', 'Кроватей'], value: '2', min: '0', max: '5',
   }],
-  buttons: true,
+  buttons: false,
   resultDefault: 'Сколько комнат',
   keyWords: null,
   isExpanded: false,

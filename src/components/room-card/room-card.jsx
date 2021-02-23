@@ -93,7 +93,7 @@ class RoomCard extends React.Component {
 RoomCard.defaultProps = {
   images: ['room1.jpg', 'room2.jpg', 'room3.jpg', 'room4.jpg'],
   number: '888',
-  isLux: true,
+  isLux: false,
   costForDay: '9 990',
   activeStars: 5,
   numOfComments: '145',

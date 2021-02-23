@@ -1,0 +1,47 @@
+@import '../../../scss/fonts.scss';
+@import '../../../scss/variables.scss';
+@import '../../../components/header/header.scss';
+@import '../../../components/footer/footer.scss';
+@import '../../../components/search-room-card/search-room-card.scss';
+
+html {
+  font-size: 16px;
+  font-family: $font-main;
+}
+
+body {
+  margin: 0;
+}
+
+.landing-page {
+  &__image {
+    background: url(./img/landing-page.jpg) no-repeat;
+    background-size: cover;
+    background-position: bottom;
+  }
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    max-width: 1160px;
+    margin: 0 auto;
+    padding: 70px 0 21px;
+    @media (min-width: 424px) and (max-width: 1440px) {
+      padding: 70px 5.21vw 21px;
+    }
+    @media (max-width: 424px) {
+      align-items: center;
+    }
+  }
+  &__text {
+    font-size: 0.875rem;
+    line-height: 1.5rem;
+    text-align: right;
+    color: $color-main-75;
+    width: 297px;
+    align-self: flex-end;
+    margin-top: 318px;
+  }
+  &__search-room-card {
+    max-width: 380px;
+  }
+}

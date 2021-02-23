@@ -1,12 +1,57 @@
 const path = require('path');
+const fs = require('fs');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const OptimizeCssAssetWebpackPlugin = require('optimize-css-assets-webpack-plugin');
+const TerserWebpackPlugin = require('terser-webpack-plugin');
 const webpack = require('webpack');
-// const webpack = require('webpack');
 
 const isDev = process.env.NODE_ENV === 'development';
-// const isProd = !isDev;
+const isProd = !isDev;
+
+let PAGES_NAME; const PAGES_DIR = [];
+
+const createEntryPoints = () => {
+  const entryPoints = {};
+
+  const uiKitPath = path.resolve(__dirname, 'src/pages/ui-kit');
+  const uiKitPagesName = fs.readdirSync(uiKitPath);
+  uiKitPagesName.forEach((pageName) => {
+    PAGES_DIR.push(path.resolve(__dirname, `src/pages/ui-kit/${pageName}`));
+  });
+  PAGES_NAME = uiKitPagesName;
+  uiKitPagesName.forEach((pageName) => {
+    entryPoints[pageName] = path.join(uiKitPath, `/${pageName}/index.jsx`);
+  });
+
+  const webPagesPath = path.resolve(__dirname, 'src/pages/websitePages');
+  const webPagesName = fs.readdirSync(webPagesPath);
+  webPagesName.forEach((item) => {
+    PAGES_DIR.push(path.resolve(__dirname, `src/pages/websitePages/${item}`));
+  });
+  PAGES_NAME = PAGES_NAME.concat(webPagesName);
+  webPagesName.forEach((pageName) => {
+    entryPoints[pageName] = path.join(webPagesPath, `/${pageName}/index.jsx`);
+  });
+
+  return entryPoints;
+};
+const optimization = () => {
+  const obj = {};
+  // К сожалению Windows не смог в длинные названия файлов.
+
+  /* if (isProd) {
+    obj.splitChunks = {
+      chunks: 'all',
+    };
+    obj.minimizer = [
+      new OptimizeCssAssetWebpackPlugin(),
+      new TerserWebpackPlugin(),
+    ];
+  } */
+  return obj;
+};
 
 module.exports = {
   resolve: {
@@ -15,14 +60,13 @@ module.exports = {
       '@components': path.resolve(__dirname, 'src/components'),
     },
   },
-  entry: {
-    testPage: path.join(__dirname, 'src/testPage/index.jsx'),
-  },
+  entry: createEntryPoints(),
   output: {
-    filename: '[name].[contenthash].js',
+    filename: 'js/[name].[contenthash].js',
     path: path.resolve(__dirname, 'dist'),
   },
   devtool: isDev ? 'source-map' : '',
+  optimization: optimization(),
   module: {
     rules: [
       {
@@ -30,6 +74,9 @@ module.exports = {
         use: [
           {
             loader: MiniCssExtractPlugin.loader,
+            options: {
+              publicPath: '../',
+            },
           },
           'css-loader',
           {
@@ -58,6 +105,16 @@ module.exports = {
             },
           },
         ],
+      },
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env'],
+          },
+        },
       },
       {
         test: /\.jsx$/,
@@ -105,13 +162,13 @@ module.exports = {
   },
   plugins: [
     new CleanWebpackPlugin(),
-    new HtmlWebpackPlugin({
-      filename: 'testPage.html',
-      template: 'src/testPage/testPage.html',
-      chunks: ['testPage'],
-    }),
+    ...PAGES_NAME.map((pageName, i) => new HtmlWebpackPlugin({
+      filename: `${pageName}.html`,
+      template: `${PAGES_DIR[i]}/${pageName}.html`,
+      chunks: [pageName],
+    })),
     new MiniCssExtractPlugin({
-      filename: '[name].[contenthash].css',
+      filename: 'css/[name].[contenthash].css',
     }),
     new webpack.ProvidePlugin({
       React: 'react',
@@ -119,8 +176,4 @@ module.exports = {
       jQuery: 'jquery',
     }),
   ],
-
-  devServer: {
-    index: 'testPage.html',
-  },
 };
