@@ -1,4 +1,3 @@
-import { trim } from 'jquery';
 import myVars from '../../../variables/variables';
 import Logo from '../../../components/logo/logo';
 import TextField from '../../../components/text-field/text-field';
